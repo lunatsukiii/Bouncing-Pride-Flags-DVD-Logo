@@ -1,6 +1,5 @@
 new p5(function (sketch) {
-var images = 
-[];
+var images = [];
 var imageIndex = 0;
 var position = sketch.createVector(0,0);
 var velocity = p5.Vector.fromAngle(45);
@@ -32,9 +31,9 @@ function checkBoundaryCollision(image)
 }
 sketch.preload = function() 
 {
-    for (var i = 1; i < 19; i++)
+    for (var i = 1; i < 28; i++)
     {
-        var image = sketch.loadImage("flags/dvd" + i + ".png"  );
+        var image = sketch.loadImage("flags/dvd" + i + ".jpg"  );
         images.push(image)
     }
 }
@@ -42,14 +41,15 @@ sketch.setup = function()
 {
   sketch.createCanvas(window.innerWidth, window.innerHeight);
 }
-sketch.draw = function() {
+sketch.draw = function() 
+{
   sketch.background("#111");
   var image = images[imageIndex];
   var hasCollision = checkBoundaryCollision(image);
   if (hasCollision)
   {
     imageIndex++;
-    if (imageIndex + 1 > image.length) 
+    if (imageIndex + 1 > images.length) 
     {
       imageIndex = 0;
     }
