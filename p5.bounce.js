@@ -5,6 +5,11 @@ var position = sketch.createVector(0,0);
 var velocity = p5.Vector.fromAngle(45);
 velocity.mult(5);
 
+window.onresize = function(event)
+{
+document.location.reload(true);
+}
+
   /**
    * Checks boundary collision.
    *
